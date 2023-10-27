@@ -112,3 +112,7 @@ img {
   height: 50%;
   width: auto;
 }
+
+.hidden {
+  display: none;
+}

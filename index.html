@@ -14,11 +14,11 @@
         <section class="user-inputs">
           <div class="radio-container">
             <div class="radio">
-              <input type="radio" id="affirmation">
+              <input type="radio" id="affirmation" name="msg-type">
               <label for="affirmation">affirmation</label>
             </div>
             <div class="radio">
-              <input type="radio" id="mantra">
+              <input type="radio" id="mantra" name="msg-type">
               <label for="matra">mantra</label>
             </div>
           </div>
@@ -29,6 +29,16 @@
       </div>
       <section class="msg-container">
         <img src="assets/meditate.svg" alt="Meditation Bell">
+      </section>
+      <button id="view-all-btn">View all messages</button>
+      <section class="view-all-msgs hidden">
+        <div class="affirm-container">
+
+        </div>
+        <div class="mantra-container">
+
+        </div>
+        <button class="go-home-btn">Go Home</button>
       </section>
     </main>
     <script type="text/javascript" src="main.js"></script>
