@@ -1,4 +1,4 @@
-var affirmations = [
+var affirmations = JSON.parse(localStorage.getItem("affirms-to-keep")) && [
   { id: 0, text: "I alone hold the truth of who I am." },
   { id: 1, text: "I am capable of balancing ease and effort in my life." },
   { id: 2, text: "I am optimistic because today is a new day." },
@@ -17,7 +17,7 @@ var affirmations = [
   { id: 15, text: "When I root into the earth, the earth rises to support me." }
 ];
 
-var mantras = [
+var mantras = JSON.parse(localStorage.getItem("mantras-to-keep")) && [
   { id: 16, text: "I am that." },
   { id: 17, text: "Gratitude is the life force of everything." },
   { id: 18, text: "I am love." },

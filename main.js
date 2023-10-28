@@ -47,19 +47,14 @@ function renderAllMessageLists() {
   affirmList.innerHTML = "";
   for (var i = 0; i < affirmations.length; i++) {
     affirmList.innerHTML += `<li id="${affirmations[i].id}">${affirmations[i].text}</li>`;
+    saveAffirms();
   }
   mantraList.innerHTML = "";
   for (var i = 0; i < mantras.length; i++) {
     mantraList.innerHTML += `<li id="${mantras[i].id}">${mantras[i].text}</li>`;
+    saveMantras();
   }
 }
-
-// function addNewMessage(message, array) {
-//     event.preventDefault();
-//     if (!message.value) return;
-//     array.push(createNewMessage(message.value))
-//     renderAllMessageLists()
-// }
 
 function addNewAffirmation() {
   event.preventDefault();
@@ -87,6 +82,7 @@ function deleteAffirmation(e) {
       affirmations.splice(i, 1);
     }
   }
+  saveAffirms();
   renderAllMessageLists();
 }
 
@@ -96,6 +92,7 @@ function deleteMantra(e) {
       mantras.splice(i, 1);
     }
   }
+  saveMantras();
   renderAllMessageLists();
 }
 
@@ -126,4 +123,12 @@ function toggle(element) {
 
 function getRandomMessage(array) {
   return Math.floor(Math.random() * array.length);
+}
+
+function saveAffirms() {
+    return localStorage.setItem("affirms-to-keep", JSON.stringify(affirmations));
+}
+
+function saveMantras() {
+    return localStorage.setItem("mantras-to-keep", JSON.stringify(mantras))
 }
