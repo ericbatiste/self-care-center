@@ -125,6 +125,11 @@ label {
   color: var(--black)
 }
 
+.list-msg {
+  display: flex;
+  justify-content: space-between;
+}
+
 img {
   height: 50%;
   width: auto;

@@ -18,12 +18,12 @@ var affirmations = [
 ];
 
 var mantras = [
-  { id: 0, text: "I am that." },
-  { id: 1, text: "Gratitude is the life force of everything." },
-  { id: 2, text: "I am love." },
-  { id: 3, text: "I listen to my feelings." },
-  { id: 4, text: "I accept." },
-  { id: 5, text: "Soften into the pain." },
-  { id: 6, text: "I bow to the primal wisdom, I bow to the wisdom through the ages, I bow to the true wisdom, I bow to the great divine wisdom." },
-  { id: 7, text: "Om." }
+  { id: 16, text: "I am that." },
+  { id: 17, text: "Gratitude is the life force of everything." },
+  { id: 18, text: "I am love." },
+  { id: 19, text: "I listen to my feelings." },
+  { id: 20, text: "I accept." },
+  { id: 21, text: "Soften into the pain." },
+  { id: 22, text: "I bow to the primal wisdom, I bow to the wisdom through the ages, I bow to the true wisdom, I bow to the great divine wisdom." },
+  { id: 23, text: "Om." }
 ];

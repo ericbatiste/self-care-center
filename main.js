@@ -16,6 +16,10 @@ var newMantraText = document.querySelector("#new-mantra");
 var currentMessage;
 
 window.addEventListener("load", renderAllMessageLists);
+viewAllMsgs.addEventListener("dblclick", (e) => {
+  deleteAffirmation(e);
+  deleteMantra(e);
+});
 receiveMsgBtn.addEventListener("click", receiveMessage);
 viewAllBtn.addEventListener("click", showViewAllPage);
 goHomeBtn.addEventListener("click", showHomePage);
@@ -42,19 +46,11 @@ function renderMessage() {
 function renderAllMessageLists() {
   affirmList.innerHTML = "";
   for (var i = 0; i < affirmations.length; i++) {
-    affirmList.innerHTML += `
-        <div class="list-msg">
-            <li>${affirmations[i].text}</li>
-            <button class="delet-btn">-</button>
-        </div>`;
+    affirmList.innerHTML += `<li id="${affirmations[i].id}">${affirmations[i].text}</li>`;
   }
   mantraList.innerHTML = "";
   for (var i = 0; i < mantras.length; i++) {
-    mantraList.innerHTML += `
-        <div class="list-msg">
-            <li>${mantras[i].text}</li>
-            <button class="delet-btn">-</button>
-        </div>`;
+    mantraList.innerHTML += `<li id="${mantras[i].id}">${mantras[i].text}</li>`;
   }
 }
 
@@ -83,6 +79,24 @@ function addNewMantra() {
 
 function createNewMessage(text) {
   return { id: Date.now(), text: text };
+}
+
+function deleteAffirmation(e) {
+  for (var i = 0; i < affirmations.length; i++) {
+    if (Number(e.target.id) === affirmations[i].id) {
+      affirmations.splice(i, 1);
+    }
+  }
+  renderAllMessageLists();
+}
+
+function deleteMantra(e) {
+  for (var i = 0; i < mantras.length; i++) {
+    if (Number(e.target.id) === mantras[i].id) {
+      mantras.splice(i, 1);
+    }
+  }
+  renderAllMessageLists();
 }
 
 function showViewAllPage() {
