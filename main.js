@@ -11,17 +11,17 @@ var currentMessage;
 
 receiveMsgBtn.addEventListener('click', receiveMessage);
 viewAllBtn.addEventListener('click', showViewAllPage);
-goHomeBtn.addEventListener('click', showHomePage)
+goHomeBtn.addEventListener('click', showHomePage);
 
 function receiveMessage() {
   if (!affirmBtn.checked && !mantraBtn.checked) return;
   if (affirmBtn.checked) {
     affirmBtn.checked = false;
-    currentMessage = affirmations[getRandomMessage(affirmations)];
+    currentMessage = affirmations[getRandomMessage(affirmations)].text;
   }
   if (mantraBtn.checked) {
     mantraBtn.checked = false;
-    currentMessage = mantras[getRandomMessage(mantras)];
+    currentMessage = mantras[getRandomMessage(mantras)].text;
   }
   renderMessage()
 }
@@ -35,13 +35,15 @@ function showViewAllPage() {
     toggle(inputsContainer);
     toggle(viewAllBtn);
     toggle(viewAllMsgs);
+    toggle(goHomeBtn);
 }
 
 function showHomePage() {
     toggle(msgContainer);
     toggle(inputsContainer);
     toggle(viewAllBtn);
-    toggle(viewAllMsgs);    
+    toggle(viewAllMsgs);
+    toggle(goHomeBtn);    
 }
 
 function toggle(element) {
