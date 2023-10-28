@@ -108,7 +108,33 @@ label {
   height: 160px;
 }
 
+.view-all-msgs {
+  display: flex;
+}
+
+
+.msg-list-container {
+  background-color: var(--white);
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 80%;
+}
+
+.msg-list-title {
+  color: var(--black)
+}
+
+.list-msg {
+  display: flex;
+  justify-content: space-between;
+}
+
 img {
   height: 50%;
   width: auto;
+}
+
+.hidden {
+  display: none;
 }

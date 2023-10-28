@@ -14,11 +14,11 @@
         <section class="user-inputs">
           <div class="radio-container">
             <div class="radio">
-              <input type="radio" id="affirmation">
+              <input type="radio" id="affirmation" name="msg-type">
               <label for="affirmation">affirmation</label>
             </div>
             <div class="radio">
-              <input type="radio" id="mantra">
+              <input type="radio" id="mantra" name="msg-type">
               <label for="matra">mantra</label>
             </div>
           </div>
@@ -30,6 +30,26 @@
       <section class="msg-container">
         <img src="assets/meditate.svg" alt="Meditation Bell">
       </section>
+      <button id="view-all-btn">View all messages</button>
+      <section class="view-all-msgs hidden">
+        <div class="msg-list-container">
+          <h2 class="msg-list-title">Affirmations</h2>
+          <ul class="affirm-list"></ul>
+          <form action="" id="new-affirm-form">
+            <input type="text" id="new-affirmation" placeholder="Enter new message!" />
+            <input type="submit" value="+">
+          </form>
+        </div>
+        <div class="msg-list-container">
+          <h2 class="msg-list-title">Mantras</h2>
+          <ul class="mantra-list"></ul>
+          <form action="" id="new-mantra-form">
+            <input type="text" id="new-mantra" placeholder="Enter new message!" required />
+            <input type="submit" value="+">
+          </form>
+        </div>
+      </section>
+      <button class="go-home-btn hidden">Go Home</button>
     </main>
     <script type="text/javascript" src="main.js"></script>
     <script type="text/javascript" src="data.js"></script>
