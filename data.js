@@ -24,6 +24,6 @@ var mantras = JSON.parse(localStorage.getItem("mantras-to-keep")) && [
   { id: 19, text: "I listen to my feelings." },
   { id: 20, text: "I accept." },
   { id: 21, text: "Soften into the pain." },
-  { id: 22, text: "I bow to the primal wisdom, I bow to the wisdom through the ages, I bow to the true wisdom, I bow to the great divine wisdom." },
+  { id: 22, text: `I bow to the primal wisdom, I bow to the wisdom through the ages, I bow to the true wisdom, I bow to the great divine wisdom.` },
   { id: 23, text: "Om." }
 ];
