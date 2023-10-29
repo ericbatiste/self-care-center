@@ -84,13 +84,20 @@ label {
   justify-content: space-evenly;
 }
 
-.btn{
+.btn {
   height: 1.5rem;
   font-size: .84em;
   background-color: var(--dark-blue);
-  color: white;
+  color: var(--white);
   border: none;
   border-radius: 4px;
+  transition: box-shadow 180ms ease-in;
+}
+
+.btn:hover {
+  background-color: var(--light-yellow);
+  color: var(--dark-blue);
+  box-shadow: 0 0 5px 2px;
 }
 
 .msg-container {
@@ -121,13 +128,19 @@ span {
   justify-content: space-around;
 }
 
+.msg-list-title {
+  margin-right: 50px;
+}
+
 .all-lists-container {
   display: flex;
+  justify-content: space-around;
+  width: 100vw;
 }
 
 .msg-list-container {
   background-color: var(--white);
-  margin: 20px;
+  margin: 5px 10px 40px 10px;
   padding: 10px;
   border-radius: 10px;
   width: 80%;
