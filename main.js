@@ -3,8 +3,9 @@ var mantraBtn = document.querySelector("#mantra");
 var receiveMsgBtn = document.querySelector("#receive-msg-btn");
 var viewAllBtn = document.querySelector("#view-all-btn");
 var goHomeBtn = document.querySelector(".go-home-btn");
-var msgContainer = document.querySelector(".msg-container");
 var inputsContainer = document.querySelector(".inputs-container");
+var msgContainer = document.querySelector(".msg-container");
+var meditationBell = document.querySelector("#meditation-bell");
 var viewAllMsgs = document.querySelector(".view-all-msgs");
 var affirmList = document.querySelector(".affirm-list");
 var mantraList = document.querySelector(".mantra-list");
@@ -40,7 +41,9 @@ function receiveMessage() {
 }
 
 function renderMessage() {
-  msgContainer.innerText = currentMessage;
+  toggle(meditationBell);
+  msgContainer.innerHTML = "";
+  msgContainer.innerHTML += `<span>${currentMessage}</span>`;
 }
 
 function renderAllMessageLists() {
@@ -126,9 +129,9 @@ function getRandomMessage(array) {
 }
 
 function saveAffirms() {
-    return localStorage.setItem("affirms-to-keep", JSON.stringify(affirmations));
+  return localStorage.setItem("affirms-to-keep", JSON.stringify(affirmations));
 }
 
 function saveMantras() {
-    return localStorage.setItem("mantras-to-keep", JSON.stringify(mantras))
+  return localStorage.setItem("mantras-to-keep", JSON.stringify(mantras));
 }

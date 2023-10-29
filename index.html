@@ -23,33 +23,38 @@
             </div>
           </div>
           <div class="btn-container">
-            <button id="receive-msg-btn">Receive Message</button>
+            <button class="btn" id="receive-msg-btn">Receive Message</button>
+            <button class="btn" id="view-all-btn">View all messages</button>
           </div>
         </section>
       </div>
       <section class="msg-container">
-        <img src="assets/meditate.svg" alt="Meditation Bell">
+        <img id="meditation-bell" src="assets/meditate.svg" alt="Meditation Bell">
       </section>
-      <button id="view-all-btn">View all messages</button>
+      
       <section class="view-all-msgs hidden">
-        <div class="msg-list-container">
+        <div class="list-title-container">
           <h2 class="msg-list-title">Affirmations</h2>
-          <ul class="affirm-list"></ul>
-          <form action="" id="new-affirm-form">
-            <input type="text" id="new-affirmation" placeholder="Enter new message!" />
-            <input type="submit" value="+">
-          </form>
-        </div>
-        <div class="msg-list-container">
           <h2 class="msg-list-title">Mantras</h2>
-          <ul class="mantra-list"></ul>
-          <form action="" id="new-mantra-form">
-            <input type="text" id="new-mantra" placeholder="Enter new message!" required />
-            <input type="submit" value="+">
-          </form>
+        </div>
+        <div class="all-lists-container">
+          <div class="msg-list-container">
+            <form action="" id="new-affirm-form">
+              <input class="form" type="text" id="new-affirmation" placeholder="Enter new message!" />
+              <input class="btn" type="submit" value="+">
+            </form>
+            <ul class="affirm-list"></ul>
+          </div>
+          <div class="msg-list-container">
+            <form action="" id="new-mantra-form">
+              <input class="form" type="text" id="new-mantra" placeholder="Enter new message!" required />
+              <input class="btn" type="submit" value="+">
+            </form>
+            <ul class="mantra-list"></ul>
+          </div>
         </div>
       </section>
-      <button class="go-home-btn hidden">Go Home</button>
+      <button class="go-home-btn btn hidden">Go Home</button>
     </main>
     <script type="text/javascript" src="main.js"></script>
     <script type="text/javascript" src="data.js"></script>

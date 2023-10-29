@@ -81,18 +81,23 @@ label {
 
 .btn-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
-#receive-msg-btn{
+.btn {
   height: 1.5rem;
-  min-width: 120px;
-  width: 30%;
   font-size: .84em;
   background-color: var(--dark-blue);
-  color: white;
+  color: var(--white);
   border: none;
   border-radius: 4px;
+  transition: box-shadow 180ms ease-in;
+}
+
+.btn:hover {
+  background-color: var(--light-yellow);
+  color: var(--dark-blue);
+  box-shadow: 0 0 5px 2px;
 }
 
 .msg-container {
@@ -108,26 +113,66 @@ label {
   height: 160px;
 }
 
-.view-all-msgs {
-  display: flex;
+span {
+  margin: 20px;
+  text-align: center;
 }
 
+.view-all-msgs {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-title-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.msg-list-title {
+  margin-right: 50px;
+}
+
+.all-lists-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+}
 
 .msg-list-container {
   background-color: var(--white);
-  margin: 20px;
+  margin: 5px 10px 40px 10px;
   padding: 10px;
   border-radius: 10px;
   width: 80%;
 }
 
-.msg-list-title {
-  color: var(--black)
+form {
+  display: flex;
+  justify-content: center;
 }
 
-.list-msg {
-  display: flex;
-  justify-content: space-between;
+.form {
+  border: none;
+  margin-right: 2px;
+  border-bottom: 2px solid var(--dark-blue);
+}
+
+input.btn {
+  border: none;
+  margin-bottom: 6px;
+  color: var(--dark-blue);
+  background-color: var(--white);
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+li {
+  cursor: pointer;
+  padding: 2px;
+}
+
+li:hover {
+  font-weight: 600;
 }
 
 img {
