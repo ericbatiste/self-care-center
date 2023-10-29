@@ -14,7 +14,11 @@
 
 body {
   height: 100vh;
-  background: linear-gradient(var(--dark-blue), var(--light-blue), var(--light-yellow));
+  background: linear-gradient(
+    var(--dark-blue),
+    var(--light-blue),
+    var(--light-yellow)
+  );
 }
 
 header {
@@ -55,7 +59,7 @@ h2 {
   justify-content: center;
   color: var(--white);
   font-size: 1.3em;
-  margin-bottom: .25em;
+  margin-bottom: 0.25em;
 }
 
 .user-inputs {
@@ -79,6 +83,10 @@ label {
   padding-left: 4px;
 }
 
+input:hover {
+  cursor: pointer;
+}
+
 .btn-container {
   display: flex;
   justify-content: space-evenly;
@@ -86,7 +94,7 @@ label {
 
 .btn {
   height: 1.5rem;
-  font-size: .84em;
+  font-size: 0.84em;
   background-color: var(--dark-blue);
   color: var(--white);
   border: none;
@@ -98,6 +106,7 @@ label {
   background-color: var(--light-yellow);
   color: var(--dark-blue);
   box-shadow: 0 0 5px 2px;
+  cursor: pointer;
 }
 
 .msg-container {
@@ -106,11 +115,11 @@ label {
   align-items: center;
   background-color: var(--white);
   border-radius: 10px;
-  margin-top: 40px;
+  margin: 40px;
   min-width: 300px;
   max-width: 850px;
   width: 60%;
-  height: 160px;
+  height: 130px;
 }
 
 span {
@@ -141,7 +150,7 @@ span {
 .msg-list-container {
   background-color: var(--white);
   margin: 5px 10px 40px 10px;
-  padding: 10px;
+  padding: 10px 10px 20px 10px;
   border-radius: 10px;
   width: 80%;
 }
@@ -154,16 +163,28 @@ form {
 .form {
   border: none;
   margin-right: 2px;
+  margin-bottom: 10px;
   border-bottom: 2px solid var(--dark-blue);
+  width: 60%;
+  transition: border-bottom 120ms ease-in;
 }
 
-input.btn {
+.form:hover {
+  border-bottom: 4px solid var(--dark-blue);
+}
+
+.add-btn {
   border: none;
   margin-bottom: 6px;
   color: var(--dark-blue);
   background-color: var(--white);
   font-size: 1.4em;
   font-weight: 600;
+}
+
+.add-btn:hover {
+  opacity: 60%;
+  cursor: pointer;
 }
 
 li {

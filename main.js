@@ -38,12 +38,17 @@ function receiveMessage() {
     currentMessage = mantras[getRandomMessage(mantras)].text;
   }
   renderMessage();
+  setTimeout(resetMessageDisplay, 8000);
 }
 
 function renderMessage() {
-  toggle(meditationBell);
   msgContainer.innerHTML = "";
   msgContainer.innerHTML += `<span>${currentMessage}</span>`;
+}
+
+function resetMessageDisplay() {
+  msgContainer.innerHTML = "";
+  msgContainer.innerHTML += `<img id="meditation-bell" src="assets/meditate.svg" alt="Meditation Bell">`;
 }
 
 function renderAllMessageLists() {
