@@ -27,20 +27,6 @@ goHomeBtn.addEventListener("click", showHomePage);
 newAffirmForm.addEventListener("submit", addNewAffirmation);
 newMantraForm.addEventListener("submit", addNewMantra);
 
-function receiveMessage() {
-  if (!affirmBtn.checked && !mantraBtn.checked) return;
-  if (affirmBtn.checked) {
-    affirmBtn.checked = false;
-    currentMessage = affirmations[getRandomMessage(affirmations)].text;
-  }
-  if (mantraBtn.checked) {
-    mantraBtn.checked = false;
-    currentMessage = mantras[getRandomMessage(mantras)].text;
-  }
-  renderMessage();
-  setTimeout(resetMessageDisplay, 8000);
-}
-
 function renderMessage() {
   msgContainer.innerHTML = "";
   msgContainer.innerHTML += `<span>${currentMessage}</span>`;
@@ -62,6 +48,20 @@ function renderAllMessageLists() {
     mantraList.innerHTML += `<li id="${mantras[i].id}">${mantras[i].text}</li>`;
     saveMantras();
   }
+}
+
+function receiveMessage() {
+  if (!affirmBtn.checked && !mantraBtn.checked) return;
+  if (affirmBtn.checked) {
+    affirmBtn.checked = false;
+    currentMessage = affirmations[getRandomMessage(affirmations)].text;
+  }
+  if (mantraBtn.checked) {
+    mantraBtn.checked = false;
+    currentMessage = mantras[getRandomMessage(mantras)].text;
+  }
+  renderMessage();
+  setTimeout(resetMessageDisplay, 8000);
 }
 
 function addNewAffirmation() {
