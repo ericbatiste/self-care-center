@@ -17,15 +17,19 @@ var newMantraText = document.querySelector("#new-mantra");
 var currentMessage;
 
 window.addEventListener("load", renderAllMessageLists);
-viewAllMsgs.addEventListener("dblclick", (e) => {
-  deleteAffirmation(e);
-  deleteMantra(e);
-});
 receiveMsgBtn.addEventListener("click", receiveMessage);
 viewAllBtn.addEventListener("click", showViewAllPage);
 goHomeBtn.addEventListener("click", showHomePage);
-newAffirmForm.addEventListener("submit", addNewAffirmation);
-newMantraForm.addEventListener("submit", addNewMantra);
+viewAllMsgs.addEventListener("dblclick", (e) => {
+  deleteMessage(e, affirmations);
+  deleteMessage(e, mantras);
+});
+newAffirmForm.addEventListener("submit", () => {
+  addNewMessage(affirmations, newAffirmText, newAffirmForm);
+});
+newMantraForm.addEventListener("submit", () => {
+  addNewMessage(mantras, newMantraText, newMantraForm);
+});
 
 function renderMessage() {
   msgContainer.innerHTML = "";
@@ -64,42 +68,25 @@ function receiveMessage() {
   setTimeout(resetMessageDisplay, 8000);
 }
 
-function addNewAffirmation() {
+function addNewMessage(messageType, text, form) {
   event.preventDefault();
-  if (!newAffirmText.value) return;
-  affirmations.push(createNewMessage(newAffirmText.value));
+  if (!text.value) return;
+  messageType.push(createNewMessage(text.value));
   renderAllMessageLists();
-  newAffirmForm.reset();
-}
-
-function addNewMantra() {
-  event.preventDefault();
-  if (!newMantraText.value) return;
-  mantras.push(createNewMessage(newMantraText.value));
-  renderAllMessageLists();
-  newMantraForm.reset();
+  form.reset();
 }
 
 function createNewMessage(text) {
   return { id: Date.now(), text: text };
 }
 
-function deleteAffirmation(e) {
-  for (var i = 0; i < affirmations.length; i++) {
-    if (Number(e.target.id) === affirmations[i].id) {
-      affirmations.splice(i, 1);
+function deleteMessage(e, messageType) {
+  for (var i = 0; i < messageType.length; i++) {
+    if (Number(e.target.id) === messageType[i].id) {
+      messageType.splice(i, 1);
     }
   }
   saveAffirms();
-  renderAllMessageLists();
-}
-
-function deleteMantra(e) {
-  for (var i = 0; i < mantras.length; i++) {
-    if (Number(e.target.id) === mantras[i].id) {
-      mantras.splice(i, 1);
-    }
-  }
   saveMantras();
   renderAllMessageLists();
 }
