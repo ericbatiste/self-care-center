@@ -8,9 +8,9 @@ Self Care Center is a fun little app to give you some positive encouragement and
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
 In order to use this application, simply fork the repository run git clone followed by a provided gitHub link, and run open html in your terminal.  This will open the file in your chosen browser on your local machine.
 
-### Preview of App:
+### Link to App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
-https://www.loom.com/share/cc5cff377cbe48c2b00f7c44233067c0?sid=e829ec44-67be-4d1c-8637-a512860ad827
+(https://ericbatiste.github.io/self-care-center/)
 
 ### Context:
 [//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
